@@ -1,3 +1,5 @@
+import 'package:ecom_ui/config/app_router.dart';
+import 'package:ecom_ui/screens/screens.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -24,22 +26,8 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: const HomePage(),
-    );
-  }
-}
-
-class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(
-        color: Colors.red,
-        height: 50,
-        width: 50,
-      ),
+      onGenerateRoute: AppRouter.OnGenerateRoute,
+      initialRoute: SplashScreen.routeName,
     );
   }
 }
